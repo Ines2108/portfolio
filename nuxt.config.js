@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   css: ['@/assets/css/roboto.css'],
   modules: [
     [
-      '@storyblok/nuxt',
+      '@components/nuxt',
       {
         accessToken: 's7ett65hTahER1XldB9YbQtt',
         apiOptions: {
