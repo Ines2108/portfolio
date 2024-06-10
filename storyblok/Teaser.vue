@@ -40,7 +40,13 @@ const animationTriggered = ref(false);
 
 // Function to extract the video ID from a YouTube URL
 const getYoutubeEmbedUrl = (url) => {
+  // Prüfen, ob der URL bereits im Embed-Format ist
+  if (url.includes('youtube.com/embed/')) {
+    return url; // URL unverändert zurückgeben
+  }
+
   let videoId = '';
+
   if (url.includes('shorts')) {
     videoId = url.split('shorts/')[1]?.split('?')[0];
   } else if (url.includes('youtu.be')) {
@@ -49,6 +55,7 @@ const getYoutubeEmbedUrl = (url) => {
     const urlParams = new URLSearchParams(url.split('?')[1]);
     videoId = urlParams.get('v');
   }
+
   return `https://www.youtube.com/embed/${videoId}`;
 };
 
