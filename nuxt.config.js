@@ -1,8 +1,11 @@
 export default defineNuxtConfig({
-  css: ['@/assets/css/roboto.css'],
+  css: [
+      '@/assets/css/roboto.css',
+      '@/assets/css/main.css'
+  ],
   modules: [
     [
-      '@components/nuxt',
+      '@storyblok/nuxt',
       {
         accessToken: 's7ett65hTahER1XldB9YbQtt',
         apiOptions: {
@@ -11,5 +14,13 @@ export default defineNuxtConfig({
       },
     ],
     '@nuxtjs/tailwindcss',
-  ]
+    '@nuxtjs/google-fonts',
+    '@hypernym/nuxt-anime',
+  ],
+  googleFonts: {
+    families: {
+      'Junge': true,
+      'Poppins': true
+    }
+  },
 })

@@ -12,11 +12,14 @@
     "startCommand": "npm run stackblitz"
   },
   "devDependencies": {
+    "@hypernym/nuxt-anime": "^2.1.1",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@storyblok/nuxt": "^6.0.4",
     "nuxt": "^3.10.2"
   },
   "dependencies": {
-    "gsap": "^3.12.5"
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "marked": "^12.0.2"
   }
 }
