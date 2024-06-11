@@ -21,19 +21,12 @@ Start the development server on https://localhost:3000
 npm run dev-ssl
 ```
 
-## Production
+## Vercel-Link
 
-Build the application for production:
+https://portfolio-ines-projects-c4a51f20.vercel.app/
 
-```bash
-npm run build
-```
+## Github-Repo
 
-Locally preview production build:
+https://github.com/Ines2108/portfolio
 
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
 

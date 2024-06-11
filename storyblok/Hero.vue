@@ -4,7 +4,7 @@
       class="py-56 text-[#E9DFCE] font-junge font-bold text-center"
 
   >
-    <div v-html="heroHeadline" />
+    <div v-if="heroHeadline" v-html="heroHeadline" />
     <div>
       <p class="text-xl md:text-3xl">Ines Niedermaier</p>
       <p class="text-sm md:text-xl/[1rem]">Web Developer</p>

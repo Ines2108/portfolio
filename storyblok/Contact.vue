@@ -4,7 +4,7 @@
       class="py-10 text-[#E9DFCE] text-center"
       id="contact"
   >
-    <div
+    <div v-if="contactHeadline"
         v-html="contactHeadline">
     </div>
     <div class="flex justify-center flex-col text-center font-junge">

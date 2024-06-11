@@ -1,5 +1,4 @@
 <template>
-<!--Todo: zwei Varianten implementieren für die unterschiedlichen Viewport-Ansichten-->
   <div
       v-editable="blok"
       class="py-10 w-full relative mb-10 flex items-center justify-center"

@@ -37,19 +37,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.fade-in-dynamic {
-  opacity: 0.5;
-  animation: fadeInScale 0.01s ease forwards;
-}
-
-@keyframes fadeInScale {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-</style>

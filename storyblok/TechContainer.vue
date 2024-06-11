@@ -4,7 +4,7 @@
       v-editable="blok"
       class="py-10 border-div my-8 mx-auto w-full max-w-4xl p-4 md:p-8 lg:p-12"
   >
-    <div class=" relative flex items-center flex-col">
+    <div class="relative flex items-center flex-col">
       <h1 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-[#E9DFCE] font-junge font-bold text-center mb-8">
         {{ blok.headline }}
       </h1>
@@ -71,11 +71,3 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
-.border-div {
-  position: relative;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-</style>

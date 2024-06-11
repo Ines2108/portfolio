@@ -58,45 +58,6 @@ const projectContainer = ref(null);
 const animationTriggered = ref(false);
 const isEvenIndex = computed(() => props.index % 2 === 0);
 
-const handleScroll = () => {
-  if (!projectContainer.value) return;
-
-  const scrollY = window.scrollY;
-  const sectionTop = projectContainer.value.offsetTop;
-  const windowHeight = window.innerHeight;
-
-  const componentRect = projectContainer.value.getBoundingClientRect();
-  const componentTop = componentRect.top + scrollY;
-  const componentBottom = componentTop + componentRect.height;
-  const viewportMiddle = scrollY + windowHeight / 2;
-
-  if (
-      scrollY + windowHeight > sectionTop &&
-      !animationTriggered.value &&
-      componentTop < viewportMiddle &&
-      componentBottom > viewportMiddle
-  ) {
-    $anime.set(projectItem.value, { opacity: 1, visibility: 'visible' });
-
-    $anime({
-      targets: leftPanel.value,
-      translateX: '0%',
-      opacity: 1,
-      easing: 'easeOutQuad',
-      duration: 1000
-    });
-
-    $anime({
-      targets: rightPanel.value,
-      translateX: '0%',
-      opacity: 1,
-      easing: 'easeOutQuad',
-      duration: 1000
-    });
-
-    animationTriggered.value = true;
-  }
-};
 
 onMounted(() => {
   $anime.set(leftPanel.value, {
@@ -109,11 +70,43 @@ onMounted(() => {
     opacity: 0
   });
 
-  window.addEventListener('scroll', handleScroll);
-});
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const sectionTop = projectContainer.value.offsetTop;
+    const windowHeight = window.innerHeight;
 
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll);
+    const componentRect = projectContainer.value.getBoundingClientRect();
+    const componentTop = componentRect.top + scrollY;
+    const componentBottom = componentTop + componentRect.height;
+    const viewportMiddle = scrollY + windowHeight / 2;
+
+    if (
+        scrollY + windowHeight > sectionTop &&
+        !animationTriggered.value &&
+        componentTop < viewportMiddle &&
+        componentBottom > viewportMiddle
+    ) {
+      $anime.set(projectItem.value, { opacity: 1, visibility: 'visible' });
+
+      $anime({
+        targets: leftPanel.value,
+        translateX: '0%',
+        opacity: 1,
+        easing: 'easeOutQuad',
+        duration: 1000
+      });
+
+      $anime({
+        targets: rightPanel.value,
+        translateX: '0%',
+        opacity: 1,
+        easing: 'easeOutQuad',
+        duration: 1000
+      });
+
+      animationTriggered.value = true;
+    }
+  });
 });
 </script>
 

@@ -23,13 +23,13 @@
       <div :class="open ? 'block' : 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto md:mr-24">
         <div class="text-base sm:flex-grow"></div>
         <div v-for="(item, index) in navItems" :key="index">
-          <a :href="item.href" :id="item.id" class="link-underline inline-block text-base px-4 py-2 leading-none text-[#E9DFCE] hover:text-white hover:text-teal mt-4 sm:mt-0">
+          <a :href="item.href" :id="item.id" class="relative link-underline inline-block text-base px-4 py-2 leading-none text-[#E9DFCE] hover:text-white hover:text-teal mt-4 sm:mt-0">
             {{ item.label }}
           </a>
         </div>
         <div class="relative group md:ml-5" id="navBar5G">
           <div class="invisible md:visible absolute -inset-1 bg-gradient-to-r from-[#E4C7C1] to-[#401922] rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-          <a id="navBar5" href="/Niedermaier-Ines-CV.pdf" class="bg-[#001727] inline-block text-sm px-4 py-2 leading-none border rounded text-white border-[#9D5D6A] mt-4 sm:mt-0 text-[#ed52f9]">
+          <a id="navBar5" href="/Niedermaier-Ines-CV.pdf" class="relative bg-[#001727] inline-block text-sm px-4 py-2 leading-none border rounded text-white border-[#9D5D6A] mt-4 sm:mt-0 text-[#ed52f9]">
             RESUME
           </a>
         </div>
@@ -79,25 +79,5 @@ export default {
 .link-underline:hover {
   background-size: 100% 1px;
   background-position: 0 100%;
-}
-
-#navBar1, #navBar2, #navBar3, #navBar4, #navBar5 {
-  position: relative;
-  animation: heading 1s forwards;
-}
-
-#navBar5G {
-  position: relative;
-  animation: fadeIn 5s forwards;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0%; z-index: 0; }
-  100% { opacity: 100%; z-index: 0; }
-}
-
-@keyframes heading {
-  0% { top: -50px; right: -30px; }
-  100% { top: 0; right: 0; }
 }
 </style>
